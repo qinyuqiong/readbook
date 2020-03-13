@@ -1,4 +1,4 @@
-package com.wenhua.readbook_user;
+package com.wenhua;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
