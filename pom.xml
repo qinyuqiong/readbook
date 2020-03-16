@@ -4,6 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>readbook_user</module>
+        <module>readbook_common</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -51,6 +52,13 @@
     <dependencyManagement>
         <dependencies>
 
+            <!--锁定common版本-->
+            <dependency>
+                <groupId>com.wenhua</groupId>
+                <artifactId>readbook_common</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
             <!--mybatis-plus 持久层-->
             <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
             <dependency>
@@ -65,19 +73,20 @@
                 <version>3.0.5</version>
             </dependency>
 
-            <!--swagger-->
+            <!--swagger，必须使用最新版本，低版本有找不到文档页面-->
             <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger2</artifactId>
-                <version>2.7.0</version>
+                <version>2.9.2</version>
             </dependency>
+
 
             <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
-                <version>2.7.0</version>
+                <version>2.9.2</version>
             </dependency>
 
             <!--lombok-->
