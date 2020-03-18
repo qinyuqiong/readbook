@@ -1,4 +1,4 @@
-package com.wenhua.readbook_datagenerator;
+package com.wenhua.readbook.datagenerator;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.IdType;
