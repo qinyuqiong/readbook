@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: readbook_user
+
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://39.96.44.244/readbook?serverTimezone=GMT%2B8
+    username: root
+    password: root
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    global-config:
+      db-config:
+        logic-delete-field: flag  #ȫ���߼�ɾ���ֶ�ֵ 3.3.0��ʼ֧�֣����鿴���档
+        logic-delete-value: 1 # �߼���ɾ��ֵ(Ĭ��Ϊ 1)
+        logic-not-delete-value: 0 # �߼�δɾ��ֵ(Ĭ��Ϊ 0)
+        #ȫ�������������ɲ���
+        id-type: id_worker_str

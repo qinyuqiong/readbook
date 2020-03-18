@@ -27,9 +27,6 @@ public class ReadbookUserController {
     @Autowired
     private ReadbookUserService readbookUserService;
 
-    /**
-     * 添加
-     */
 
     /**
      * 根据id删除用户

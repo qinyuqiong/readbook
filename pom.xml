@@ -5,6 +5,7 @@
     <modules>
         <module>readbook_user</module>
         <module>readbook_common</module>
+        <module>readbook_datagenerator</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
