@@ -34,10 +34,8 @@ public class RandomArray {
         return (Integer)data;
     }
 
-
     /**
      * 随机生成对应长度的大写字符串数组
-     * 如果重复，退回去重新生成随机数
      * @param length
      * @return
      */
@@ -53,7 +51,6 @@ public class RandomArray {
 
     /**
      * 随机生成对应长度的小写字符串数组
-     * 如果重复，退回去重新生成随机数
      * @param length
      * @return
      */
