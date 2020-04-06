@@ -21,8 +21,18 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     global-config:
       db-config:
-        logic-delete-field: flag  #ȫ���߼�ɾ���ֶ�ֵ 3.3.0��ʼ֧�֣����鿴���档
-        logic-delete-value: 1 # �߼���ɾ��ֵ(Ĭ��Ϊ 1)
-        logic-not-delete-value: 0 # �߼�δɾ��ֵ(Ĭ��Ϊ 0)
-        #ȫ�������������ɲ���
+        logic-delete-field: flag  #全局逻辑删除字段值 3.3.0开始支持，详情看下面。
+        logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+        logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+        #全局设置主键生成策略
         id-type: id_worker_str
+
+#配置阿里云oss的固定值
+aliyun:
+  oss:
+    file:
+      endpoint: oss-cn-beijing.aliyuncs.com
+      keyid: LTAI4FgmQNJfHB13haB2xHv5
+      keysecret: dygsF2EpTVYUKNsvYhewkCUHFhJ5nq
+      #bucket可以在控制台创建，也可以用Java代码创建
+      bucketname: readbooktest
