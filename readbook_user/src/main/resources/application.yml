@@ -31,8 +31,17 @@ mybatis-plus:
 aliyun:
   oss:
     file:
-      endpoint: oss-cn-beijing.aliyuncs.com
-      keyid: LTAI4FgmQNJfHB13haB2xHv5
-      keysecret: dygsF2EpTVYUKNsvYhewkCUHFhJ5nq
+      endpoint:
+      keyid:
+      keysecret:
       #bucket可以在控制台创建，也可以用Java代码创建
       bucketname: readbooktest
+
+#指定注册中心地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9002/eureka/
+  #eureka服务器上获取的是服务器的ip地址，否则是主机名
+  instance:
+    prefer-ip-address: true

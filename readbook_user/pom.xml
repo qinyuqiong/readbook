@@ -19,16 +19,16 @@
     </properties>
 
     <dependencies>
+        <!--服务注册-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
 
         <!--引用common-->
         <dependency>
             <groupId>com.wenhua</groupId>
             <artifactId>readbook_common</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.wenhua</groupId>
-            <artifactId>readbook_ossuploadanddownload</artifactId>
         </dependency>
 
         <dependency>

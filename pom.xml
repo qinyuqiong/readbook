@@ -2,11 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
     <modules>
         <module>readbook_user</module>
         <module>readbook_common</module>
         <module>readbook_datagenerator</module>
-        <module>readbook_ossuploaddownload</module>
+        <module>readbook_getway</module>
+        <module>readbook_ekservice</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -53,6 +55,15 @@
 
     <dependencyManagement>
         <dependencies>
+
+            <!--Spring Cloud,注意版本号，具体对应的版本到官网查询-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Hoxton.SR2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
             <!--锁定common版本-->
             <dependency>
