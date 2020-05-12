@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ReadbookUserService extends IService<ReadbookUser> {
 
+    String login(ReadbookUser user);
 }

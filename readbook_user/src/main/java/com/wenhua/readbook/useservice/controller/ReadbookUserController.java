@@ -1,6 +1,7 @@
 package com.wenhua.readbook.useservice.controller;
 
 
+import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.wenhua.readbook.useservice.entity.ReadbookUser;
 import com.wenhua.readbook.useservice.service.ReadbookUserService;
@@ -27,6 +28,15 @@ public class ReadbookUserController {
     @Autowired
     private ReadbookUserService readbookUserService;
 
+    //登录
+    @PostMapping("login")
+    public StatusReturn loginUser(@RequestBody ReadbookUser user){
+        //member对象封装手机号和密码
+        //调用service方法实现登陆
+        //返回token值，使用jwt生成
+        String token = readbookUserService.login(user);
+        return StatusReturn.success().data("token",token);
+    }
 
     /**
      * 根据id删除用户
