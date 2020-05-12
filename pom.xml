@@ -9,6 +9,7 @@
         <module>readbook_datagenerator</module>
         <module>readbook_getway</module>
         <module>readbook_ekservice</module>
+        <module>readbook_msm</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
