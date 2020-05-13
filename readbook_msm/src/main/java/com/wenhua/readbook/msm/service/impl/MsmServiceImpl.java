@@ -33,7 +33,7 @@ public class MsmServiceImpl implements MsmService {
         if (StringUtils.isEmpty(phone)){
             return false;
         }
-        DefaultProfile profile = DefaultProfile.getProfile("default","XXX","XXX");
+        DefaultProfile profile = DefaultProfile.getProfile("default","LTAI4G6M1xqYx9HL2g464x2h","VEbRfCtnaFdwDGXkxr7UdgVdweh8F9");
         IAcsClient client = new DefaultAcsClient(profile);
         //设置相关固定参数
         CommonRequest request = new CommonRequest();
@@ -52,7 +52,7 @@ public class MsmServiceImpl implements MsmService {
         //签名名称，阿里设置的
         request.putQueryParameter("SignName", "我的学习在线教育网站");
         //阿里云的模板code
-        request.putQueryParameter("TemplateCode", "XXX");
+        request.putQueryParameter("TemplateCode", "SMS_189714086");
         //验证码
         request.putQueryParameter("TemplateParam", JSONObject.toJSONString(param));
 

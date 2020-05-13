@@ -2,6 +2,7 @@ package com.wenhua.readbook.useservice.service;
 
 import com.wenhua.readbook.useservice.entity.ReadbookUser;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.wenhua.readbook.useservice.entity.RegisterVo;
 
 /**
  * <p>
@@ -14,4 +15,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ReadbookUserService extends IService<ReadbookUser> {
 
     String login(ReadbookUser user);
+
+    void register(RegisterVo registerVo);
 }

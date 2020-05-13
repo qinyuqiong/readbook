@@ -4,6 +4,7 @@ package com.wenhua.readbook.useservice.controller;
 import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.wenhua.readbook.useservice.entity.ReadbookUser;
+import com.wenhua.readbook.useservice.entity.RegisterVo;
 import com.wenhua.readbook.useservice.service.ReadbookUserService;
 import com.wenhua.readbook_common.StatusReturn;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,13 @@ public class ReadbookUserController {
     //注入service
     @Autowired
     private ReadbookUserService readbookUserService;
+
+    //注册
+    @PostMapping("register")
+    public StatusReturn registterUser(@RequestBody RegisterVo registerVo){
+        readbookUserService.register(registerVo);
+        return StatusReturn.success();
+    }
 
     //登录
     @PostMapping("login")

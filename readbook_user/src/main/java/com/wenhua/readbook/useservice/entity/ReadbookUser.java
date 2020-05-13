@@ -40,7 +40,7 @@ public class ReadbookUser implements Serializable {
     private String password;
 
     @ApiModelProperty(value = "电话")
-    private Integer telphone;
+    private String telphone;
 
     @ApiModelProperty(value = "邮箱")
     private String emial;
