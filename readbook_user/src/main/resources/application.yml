@@ -11,7 +11,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://39.96.44.244/readbook?serverTimezone=GMT%2B8
     username: root
-    password:
+    password: XXXX
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
@@ -31,17 +31,29 @@ mybatis-plus:
 aliyun:
   oss:
     file:
-      endpoint:
-      keyid:
-      keysecret:
+      endpoint: oss-cn-hangzhou.aliyuncs.com
+      keyid: XXXX
+      keysecret: XXXX
       #bucket可以在控制台创建，也可以用Java代码创建
       bucketname: readbooktest
 
 #指定注册中心地址
-eureka:
-  client:
-    service-url:
-      defaultZone: http://127.0.0.1:9002/eureka/
-  #eureka服务器上获取的是服务器的ip地址，否则是主机名
-  instance:
-    prefer-ip-address: true
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:9002/eureka/
+#  #eureka服务器上获取的是服务器的ip地址，否则是主机名
+#  instance:
+#    prefer-ip-address: true
+#redis配置
+redis:
+  host: 127.0.0.1 #本机，如果时虚拟机则填虚拟机ip
+  port: 6379
+  database: 0
+  timeout: 1800000
+  lettuce:
+    pool:
+      max-active: 20
+      max-idle: 5
+      min-idle: 0
+      max-wait: 1

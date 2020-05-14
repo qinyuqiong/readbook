@@ -1,0 +1,66 @@
+# 服务端口
+server:
+  port: 8006
+
+# 服务名,环境设置：dev、test、prod
+spring:
+  application:
+    name: edu-servicemsm
+  profiles:
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  # nacos服务地址=127.0.0.1:8848
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  #redis配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    timeout: 1800000
+    lettuce:
+      pool:
+        max-active: 20
+        max-idle: 5
+        min-idle: 0
+        max-wait: 1
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: flag  #全局逻辑删除字段值 3.3.0开始支持，详情看下面。
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+      #全局设置主键生成策略
+      id-type: id_worker_str
+  mapper-locations: classpath:com/atguigu/msmservice/mapper/xml/*.xml
+
+#配置阿里云oss的固定值
+aliyun:
+  oss:
+    file:
+      endpoint: oss-cn-hangzhou.aliyuncs.com
+      keyid: XXX
+      keysecret: XXX
+      #bucket可以在控制台创建，也可以用Java代码创建
+      bucketname: edu-msmservice
+      #存储头像文件夹名称
+      host: career
+
+
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    edfault:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000
