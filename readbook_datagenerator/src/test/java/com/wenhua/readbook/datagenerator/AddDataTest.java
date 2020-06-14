@@ -19,18 +19,18 @@ public class AddDataTest {
     public void test(int Quantity){
         for(int i = 0 ; i < Quantity ; i++){
         addData.AddUser();
-        addData.AddReadbookBook();
-        addData.AddReadbookMenu();
-        addData.AddReadbookType();
+        //addData.AddReadbookBook();
+        //addData.AddReadbookMenu();
+        //addData.AddReadbookType();
         addData.AddReadbookEmblem();
-        addData.AddReadbookComment();
-        addData.AddReadbookArticle();
-        addData.AddReadbookInfo();
-        addData.AddReadbookBookrack();
-        addData.AddReadbookBookType();
-        addData.AddReadbookRoleMenu();
+        //addData.AddReadbookComment();
+        //addData.AddReadbookArticle();
+        //addData.AddReadbookInfo();
+        //addData.AddReadbookBookrack();
+        //addData.AddReadbookBookType();
+        //addData.AddReadbookRoleMenu();
         addData.AddReadbookUserEmblem();
-        addData.AddReadbookCommentArticle();
+        //addData.AddReadbookCommentArticle();
         }
     }
 }

@@ -10,6 +10,7 @@
         <module>readbook_getway</module>
         <module>readbook_ekservice</module>
         <module>readbook_msm</module>
+        <module>readbook_book</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -128,6 +129,16 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <!--项目打包时将Java目录中的*.xml文件也进行打包-->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
     </build>
 
 </project>

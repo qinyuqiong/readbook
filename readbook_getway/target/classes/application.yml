@@ -1,0 +1,28 @@
+server:
+  port: 9003
+spring:
+  application:
+    name: edu-getway
+#zuul:
+#  routes:
+#    api-eduservice:
+#      path: /eduservice/**
+#      url: http://localhost:8001/eduservice/
+#    api-vidservice:
+#      path: /vidservice/**
+#      url: http://localhost:8002/vidservice/
+#    api-ucservice:
+#      path: /ucservice/**
+#      url: http://localhost:8003/ucservice/
+#    api-statistics:
+#      path: /statistics/**
+#      url: http://localhost:8004/statistics/
+
+#指定注册中心地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9002/eureka/
+  #eureka服务器上获取的是服务器的ip地址，否则是主机名
+  instance:
+    prefer-ip-address: true

@@ -11,7 +11,7 @@
     <groupId>com.wenhua</groupId>
     <artifactId>readbook_common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>readbook_common</name>
+    <name>readbook_common</name>redis-cli.exe -h 127.0.0.1 -p 6379
     <description>Demo project for Spring Boot</description>
 
     <properties>

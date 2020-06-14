@@ -32,10 +32,10 @@
         </dependency>
 
         <!--服务注册-->
-        <!--<dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>-->
+        </dependency>
         <!--解决ClassNotFoundException: javax.xml.bind.DatatypeConverter-->
         <dependency>
             <groupId>javax.xml.bind</groupId>

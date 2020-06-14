@@ -14,12 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.InputStream;
 import java.util.UUID;
 
-/**
- * @description:
- * @author: yuqiong
- * @createDate: 2020/4/6
- * @version: 1.0
- */
+
 /**
  * @description:文件上传oss
  * @author: yuqiong

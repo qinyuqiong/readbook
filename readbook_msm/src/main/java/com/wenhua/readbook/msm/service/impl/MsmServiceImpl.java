@@ -9,6 +9,7 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
+import com.wenhua.readbook.msm.handler.ConstantPropertiesUtil;
 import com.wenhua.readbook.msm.service.MsmService;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -33,7 +34,7 @@ public class MsmServiceImpl implements MsmService {
         if (StringUtils.isEmpty(phone)){
             return false;
         }
-        DefaultProfile profile = DefaultProfile.getProfile("default","LTAI4G6M1xqYx9HL2g464x2h","VEbRfCtnaFdwDGXkxr7UdgVdweh8F9");
+        DefaultProfile profile = DefaultProfile.getProfile("default", ConstantPropertiesUtil.KEYID,ConstantPropertiesUtil.KEYSECRET);
         IAcsClient client = new DefaultAcsClient(profile);
         //设置相关固定参数
         CommonRequest request = new CommonRequest();

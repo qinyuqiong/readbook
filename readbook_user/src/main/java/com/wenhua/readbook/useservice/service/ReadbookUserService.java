@@ -1,8 +1,12 @@
 package com.wenhua.readbook.useservice.service;
 
-import com.wenhua.readbook.useservice.entity.ReadbookUser;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.wenhua.readbook.useservice.entity.ReadbookUser;
 import com.wenhua.readbook.useservice.entity.RegisterVo;
+import com.wenhua.readbook.useservice.entity.UserWithEmblem;
+import com.wenhua.readbook.useservice.entity.query.QueryBookUser;
 
 /**
  * <p>
@@ -17,4 +21,10 @@ public interface ReadbookUserService extends IService<ReadbookUser> {
     String login(ReadbookUser user);
 
     void register(RegisterVo registerVo);
+
+    Integer InquireUserId(ReadbookUser readbookUser);
+
+    UserWithEmblem selectUserWithEmble(Integer userid);
+
+    IPage<ReadbookUser> pageListCondition(Page<ReadbookUser> eduBookPage, QueryBookUser readbookUser);
 }

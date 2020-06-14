@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 阿里云实现短信验证
  * @version 1.0 2020/5/12
  * @auther LENOVO
  */

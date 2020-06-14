@@ -2,6 +2,7 @@ package com.wenhua.readbook.ekservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
@@ -11,6 +12,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  */
 @SpringBootApplication
 @EnableEurekaServer//加入此注解
+@EnableEurekaClient//网关服务化
 public class EkServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(EkServerApplication.class);
