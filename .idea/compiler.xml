@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="BUILD_PROCESS_HEAP_SIZE" value="1024" />
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="readbook_datagenerator" />
+        <module name="readbook_getway" />
+        <module name="readbook" />
+        <module name="readbook_user" />
+        <module name="readbook_book" />
+        <module name="readbook_msm" />
+        <module name="readbook_common" />
+        <module name="readbook_ekservice" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="11">
+      <module name="readbook" target="11" />
+      <module name="readbook_book" target="11" />
+      <module name="readbook_common" target="11" />
+      <module name="readbook_datagenerator" target="11" />
+      <module name="readbook_ekservice" target="11" />
+      <module name="readbook_getway" target="11" />
+      <module name="readbook_msm" target="11" />
+      <module name="readbook_user" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="readbook" options="-parameters" />
+      <module name="readbook_book" options="-parameters" />
+      <module name="readbook_common" options="-parameters" />
+      <module name="readbook_datagenerator" options="-parameters" />
+      <module name="readbook_ekservice" options="-parameters" />
+      <module name="readbook_getway" options="-parameters" />
+      <module name="readbook_msm" options="-parameters" />
+      <module name="readbook_user" options="-parameters" />
+    </option>
+  </component>
+</project>

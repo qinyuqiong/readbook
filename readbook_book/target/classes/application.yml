@@ -1,0 +1,59 @@
+server:
+  port: 8003
+
+spring:
+  application:
+    name: readbook-book
+
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.104.154.133/readbook?serverTimezone=GMT%2B8
+    username: root
+    password: root
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    global-config:
+      db-config:
+        logic-delete-field: flag  #全局逻辑删除字段值 3.3.0开始支持，详情看下面。
+        logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+        logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+        #全局设置主键生成策略
+        id-type: id_worker_str
+
+#配置阿里云oss的固定值
+aliyun:
+  oss:
+    file:
+      endpoint: oss-cn-beijing.aliyuncs.com
+      keyid: LTAI4GG7Xfa9AQF9qAiaMqhh
+      keysecret: yoGuc9sxi6JnDGZD1lnCUN6TMibwuF
+      #bucket可以在控制台创建，也可以用Java代码创建
+      bucketname: readbooktest
+
+#指定注册中心地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9002/eureka/
+  #eureka服务器上获取的是服务器的ip地址，否则是主机名
+  instance:
+    prefer-ip-address: true
+#redis配置
+redis:
+  host: 127.0.0.1 #本机，如果时虚拟机则填虚拟机ip
+  port: 6379
+  database: 0
+  timeout: 1800000
+  lettuce:
+    pool:
+      max-active: 20
+      max-idle: 5
+      min-idle: 0
+      max-wait: 1

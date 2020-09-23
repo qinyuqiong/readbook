@@ -6,12 +6,12 @@
         <artifactId>readbook</artifactId>
         <groupId>com.wenhua</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <!--<relativePath/>--> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.wenhua</groupId>
     <artifactId>readbook_common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>readbook_common</name>redis-cli.exe -h 127.0.0.1 -p 6379
+    <name>readbook_common</name><!--redis-cli.exe -h 127.0.0.1 -p 6379-->
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -71,12 +71,12 @@
     </dependencies>
 
     <build>
-        <plugins>
+        <!--<plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-        </plugins>
+        </plugins>-->
     </build>
 
 </project>

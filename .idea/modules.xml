@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/readbook.iml" filepath="$PROJECT_DIR$/readbook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/readbook_book/readbook_book.iml" filepath="$PROJECT_DIR$/readbook_book/readbook_book.iml" />
+      <module fileurl="file://$PROJECT_DIR$/readbook_common/readbook_common.iml" filepath="$PROJECT_DIR$/readbook_common/readbook_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/readbook_datagenerator/readbook_datagenerator.iml" filepath="$PROJECT_DIR$/readbook_datagenerator/readbook_datagenerator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/readbook_ekservice/readbook_ekservice.iml" filepath="$PROJECT_DIR$/readbook_ekservice/readbook_ekservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/readbook_getway/readbook_getway.iml" filepath="$PROJECT_DIR$/readbook_getway/readbook_getway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/readbook_msm/readbook_msm.iml" filepath="$PROJECT_DIR$/readbook_msm/readbook_msm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/readbook_user/readbook_user.iml" filepath="$PROJECT_DIR$/readbook_user/readbook_user.iml" />
+    </modules>
+  </component>
+</project>
