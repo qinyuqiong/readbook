@@ -10,7 +10,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="readbook_datagenerator" />
         <module name="readbook_getway" />
-        <module name="readbook" />
         <module name="readbook_user" />
         <module name="readbook_book" />
         <module name="readbook_msm" />

@@ -1,0 +1,4 @@
+com\wenhua\readbook_common\StatusReturn.class
+com\wenhua\readbook_common\JwtUtils.class
+com\wenhua\readbook_common\MD5.class
+com\wenhua\readbook_common\ResultCode.class
