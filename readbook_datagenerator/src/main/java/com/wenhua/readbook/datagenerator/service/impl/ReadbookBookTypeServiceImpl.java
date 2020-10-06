@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author testjava
- * @since 2020-03-18
+ * @since 2020-09-29
  */
 @Service
 public class ReadbookBookTypeServiceImpl extends ServiceImpl<ReadbookBookTypeMapper, ReadbookBookType> implements ReadbookBookTypeService {

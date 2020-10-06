@@ -1,4 +1,4 @@
-package com.wenhua.readbook.useservice.entity;
+package com.wenhua.readbook.useservice.entity.query;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

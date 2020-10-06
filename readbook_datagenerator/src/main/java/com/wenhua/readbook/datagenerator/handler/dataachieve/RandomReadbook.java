@@ -1,6 +1,5 @@
 package com.wenhua.readbook.datagenerator.handler.dataachieve;
 
-import com.wenhua.readbook.datagenerator.entity.ReadbookUser;
 import com.wenhua.readbook.datagenerator.handler.RandomArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -32,7 +31,7 @@ public class RandomReadbook {
         return number;
     }
 
-    //随机0-99数字
+    //随机0-99数字，用于年龄等
     public Integer RandomHundredNumber(){
         Integer number = randomArray.dataNumber(2);
         return number;
@@ -47,13 +46,13 @@ public class RandomReadbook {
         return email;
     }
 
-    //生成string
+    //生成string，字符串
     public String RandomString(){
-        String email = randomArray.dataUppercaseLetters(1)
+        String string = randomArray.dataUppercaseLetters(1)
                 +randomArray.dataLowercaseLetters(1)
                 +randomArray.dataUppercaseLetters(2)
                 +randomArray.dataLowercaseLetters(2)
                 +randomArray.dataNumber(2);
-        return email;
+        return string;
     }
 }

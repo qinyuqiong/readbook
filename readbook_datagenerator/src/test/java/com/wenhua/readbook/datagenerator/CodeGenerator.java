@@ -41,7 +41,7 @@ public class CodeGenerator {
 
         // 3、数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://47.104.154.133/readbook?serverTimezone=GMT%2B8");
+        dsc.setUrl("jdbc:mysql://localhost/readbook?serverTimezone=GMT%2B8");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("root");
@@ -66,8 +66,10 @@ public class CodeGenerator {
                 ,"readbook_book_type","readbook_bookrack"
                 ,"readbook_comment","readbook_comment_article"
                 ,"readbook_emblem","readbook_evaluate"
-                ,"readbook_info","readbook_menu","readbook_role"
-                ,"readbook_role_menu","readbook_type","readbook_user_emblem");
+                ,"readbook_info","readbook_role"
+                ,"readbook_type","readbook_user_emblem"
+                ,"readbook_permission","readbook_permission_role"
+                ,"readbook_role_user");
 
         strategy.setNaming(NamingStrategy.underline_to_camel);//数据库表映射到实体的命名策略
         strategy.setTablePrefix(pc.getModuleName() + "_"); //生成实体时去掉表前缀

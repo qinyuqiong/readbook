@@ -1,15 +1,9 @@
 package com.wenhua.readbook.datagenerator.controller;
 
 
-import com.wenhua.readbook.datagenerator.entity.ReadbookUser;
-import com.wenhua.readbook.datagenerator.service.ReadbookUserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * <p>
@@ -17,20 +11,11 @@ import java.util.List;
  * </p>
  *
  * @author testjava
- * @since 2020-03-18
+ * @since 2020-09-29
  */
 @RestController
 @RequestMapping("/datagenerator/readbook-user")
 public class ReadbookUserController {
-
-    @Autowired
-    private ReadbookUserService readbookUserService;
-
-    @GetMapping
-    public List<ReadbookUser> getAllUserList(){
-        List<ReadbookUser> list = readbookUserService.list(null);
-        return list;
-    }
 
 }
 

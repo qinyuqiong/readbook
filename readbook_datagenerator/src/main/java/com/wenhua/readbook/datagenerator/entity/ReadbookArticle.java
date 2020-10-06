@@ -2,18 +2,17 @@ package com.wenhua.readbook.datagenerator.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
-import java.util.Date;
-
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
@@ -21,10 +20,9 @@ import org.springframework.stereotype.Component;
  * </p>
  *
  * @author testjava
- * @since 2020-03-18
+ * @since 2020-09-29
  */
-@Component
-@ComponentScan
+@Service
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
@@ -40,8 +38,8 @@ public class ReadbookArticle implements Serializable {
     @ApiModelProperty(value = "文章标题")
     private String title;
 
-    @ApiModelProperty(value = "文章摘要")
-    private String summary;
+    @ApiModelProperty(value = "文章内容 html")
+    private String content;
 
     @ApiModelProperty(value = "文章内容 纯文本")
     private String contentText;
@@ -52,20 +50,17 @@ public class ReadbookArticle implements Serializable {
     @ApiModelProperty(value = "所在页数")
     private Integer page;
 
-    @ApiModelProperty(value = "文章内容 html")
-    private String content;
-
     @ApiModelProperty(value = "文章查看次数")
     private Integer view;
 
-    @ApiModelProperty(value = "文章喜欢次数")
+    @ApiModelProperty(value = "文章的赞次数")
     private Integer praise;
 
-    @ApiModelProperty(value = "文章创建时间")
+    @ApiModelProperty(value = "创建时间")
     @TableField(fill = FieldFill.INSERT)//自动填充标识
     private Date createTime;
 
-    @ApiModelProperty(value = "文章更新时间")
+    @ApiModelProperty(value = "更新时间")
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date updateTime;
 

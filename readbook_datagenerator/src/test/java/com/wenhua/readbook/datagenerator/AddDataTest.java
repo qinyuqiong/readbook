@@ -5,7 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 /**
- * @description:
+ * @description: 循环生成数据
  * @author: yuqiong
  * @createDate: 2020/3/19
  * @version: 1.0
@@ -22,14 +22,14 @@ public class AddDataTest {
         //addData.AddReadbookBook();
         //addData.AddReadbookMenu();
         //addData.AddReadbookType();
-        addData.AddReadbookEmblem();
+        //addData.AddReadbookEmblem();
         //addData.AddReadbookComment();
         //addData.AddReadbookArticle();
         //addData.AddReadbookInfo();
         //addData.AddReadbookBookrack();
         //addData.AddReadbookBookType();
         //addData.AddReadbookRoleMenu();
-        addData.AddReadbookUserEmblem();
+        //addData.AddReadbookUserEmblem();
         //addData.AddReadbookCommentArticle();
         }
     }

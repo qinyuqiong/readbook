@@ -9,7 +9,8 @@ spring:
     active: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.104.154.133/readbook?serverTimezone=GMT%2B8
+    url: jdbc:mysql://localhost/readbook?serverTimezone=GMT%2B8
+    #47.104.154.133/readbook?serverTimezone=GMT%2B8
     username: root
     password: root
   jackson:

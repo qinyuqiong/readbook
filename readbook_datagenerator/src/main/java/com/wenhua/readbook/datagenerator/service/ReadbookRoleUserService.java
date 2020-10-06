@@ -1,6 +1,6 @@
 package com.wenhua.readbook.datagenerator.service;
 
-import com.wenhua.readbook.datagenerator.entity.ReadbookRoleMenu;
+import com.wenhua.readbook.datagenerator.entity.ReadbookRoleUser;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author testjava
- * @since 2020-03-18
+ * @since 2020-09-29
  */
-public interface ReadbookRoleMenuService extends IService<ReadbookRoleMenu> {
+public interface ReadbookRoleUserService extends IService<ReadbookRoleUser> {
 
 }

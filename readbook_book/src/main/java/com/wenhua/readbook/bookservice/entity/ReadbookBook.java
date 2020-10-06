@@ -42,6 +42,9 @@ public class ReadbookBook implements Serializable {
     @ApiModelProperty(value = "简介")
     private String intro;
 
+    @ApiModelProperty(value = "url路径")
+    private String url;
+
     @ApiModelProperty(value = "出版社名")
     private String publisher;
 

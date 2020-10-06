@@ -26,7 +26,8 @@ public class RandomArray {
     public Integer dataNumber(int length){
         int data = 0;
         for (int i=1; i <= length ; i++){
-            data += randomData.getRANDOM_NUMBER()*Math.pow(10, length-i);
+            data += randomData.getRANDOM_NUMBER()*Math.pow(10, length-i);//随机生成某一位的数字并加到原本数字中
+            //如果生成完毕，但是生成的随机数字为0，则重新执行直到不满足条件
             if (i == 1 && data == 0){
                 dataNumber(length);
             }
@@ -44,6 +45,7 @@ public class RandomArray {
         for (int i=0; i < dataChars.length ; i++){
             dataChars[i] =randomData.getRANDOM_UPPERCASE_LETTERS();
         }
+        //char类型转为string类型
         String data = String.copyValueOf(dataChars);
         return data;
     }

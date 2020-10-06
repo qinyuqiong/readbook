@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.wenhua.readbook.useservice.entity.ReadbookEmblem;
 import com.wenhua.readbook.useservice.entity.ReadbookUser;
-import com.wenhua.readbook.useservice.entity.RegisterVo;
+import com.wenhua.readbook.useservice.entity.query.RegisterVo;
 import com.wenhua.readbook.useservice.entity.UserWithEmblem;
 import com.wenhua.readbook.useservice.entity.query.QueryBookUser;
 import com.wenhua.readbook.useservice.handler.UserException;
@@ -105,12 +105,12 @@ public class ReadbookUserServiceImpl extends ServiceImpl<ReadbookUserMapper, Rea
             throw new UserException(20001,"手机号已存在");
         }
 
-        //5.添加用户名，手机号，密码，默认权限，，默认性别，到数据库
+        //5.添加用户名，手机号，密码，默认性别，到数据库
         ReadbookUser readbookUser = new ReadbookUser();
         readbookUser.setUsername(username);
         readbookUser.setTelphone(telphone);
         readbookUser.setPassword(MD5.encrypt(password));
-        readbookUser.setRoleId(1);
+        //readbookUser.setRoleId(1);
         readbookUser.setSex(true);
         baseMapper.insert(readbookUser);
 

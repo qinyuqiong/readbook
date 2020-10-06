@@ -1,20 +1,28 @@
 server:
   port: 8003
+  tomcat:
+    uri-encoding: UTF-8 #用于解码URI的字符编码。
 
 spring:
   application:
     name: readbook-book
 
+
   profiles:
     active: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.104.154.133/readbook?serverTimezone=GMT%2B8
+    url: jdbc:mysql://localhost/readbook?serverTimezone=GMT%2B8
     username: root
     password: root
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+  http:
+    encoding:
+      force: true #是否将编码强制到HTTP请求和响应上配置的字符集。默认为false
+      enabled: true #是否启用http编码支持。默认为false
+      charset: utf-8 #HTTP请求和响应的字符集。如果没有明确设置,就将该字符集添加到Content-Type中
 
 mybatis-plus:
   configuration:

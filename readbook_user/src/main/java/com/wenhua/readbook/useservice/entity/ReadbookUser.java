@@ -2,16 +2,16 @@ package com.wenhua.readbook.useservice.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
-import java.util.Date;
-
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
@@ -50,9 +50,6 @@ public class ReadbookUser implements Serializable {
 
     @ApiModelProperty(value = "年龄")
     private Integer age;
-
-    @ApiModelProperty(value = "权限id")
-    private Integer roleId;
 
     @ApiModelProperty(value = "用户头像url")
     private String avatar;

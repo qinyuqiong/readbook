@@ -16,6 +16,12 @@ import java.util.UUID;
 
 
 /**
+ * 1.获取上传时服务器所需要的信息
+ * 2.获取文件名，拼接文件名，拼接将要存储的路径
+ * 3.通过io流获取完整的路径
+ * 4.调用上传
+ * 5.关闭上传
+ * 6.返回访问的完整路径
  * @description:文件上传oss
  * @author: yuqiong
  * @createDate: 2020/4/4
@@ -24,7 +30,6 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/eduservice/oss")
 @CrossOrigin
-
 public class ImgUploadController {
     //上传讲师头像的方法
     @PostMapping("upload")
@@ -48,7 +53,7 @@ public class ImgUploadController {
             //获取当前日期并将2019.04.03==》 2019/04/13,
             String filePath = new DateTime().toString("yyyy/MM/dd");
 
-            //拼接文件完整名称
+            //拼接文件完整路径
             //2019/04/03/sdfsd01.txt
             filename = filePath+"/"+filename;
 
@@ -57,7 +62,7 @@ public class ImgUploadController {
             // 创建OSSClient实例。
             OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
 
-            // 上传文件流。
+            // 上传文件流。上传的bucket名字，文件的路径，文件内容
             ossClient.putObject(yourBucketName, filename, inputStream);
 
             // 关闭OSSClient。

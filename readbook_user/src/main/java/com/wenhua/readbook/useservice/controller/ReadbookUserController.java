@@ -4,7 +4,7 @@ package com.wenhua.readbook.useservice.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.wenhua.readbook.useservice.entity.ReadbookUser;
-import com.wenhua.readbook.useservice.entity.RegisterVo;
+import com.wenhua.readbook.useservice.entity.query.RegisterVo;
 import com.wenhua.readbook.useservice.entity.UserWithEmblem;
 import com.wenhua.readbook.useservice.entity.query.QueryBookUser;
 import com.wenhua.readbook.useservice.service.ReadbookUserService;

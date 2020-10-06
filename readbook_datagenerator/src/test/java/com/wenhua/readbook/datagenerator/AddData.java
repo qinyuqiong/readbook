@@ -38,17 +38,26 @@ public class AddData {
     @Autowired
     private ReadbookInfoService readbookInfoService;
     @Autowired
-    private ReadbookMenuService readbookMenuService;
+    private ReadbookPermissionRoleService readbookPermissionRoleService;
+    @Autowired
+    private ReadbookPermissionService readbookPermissionService;
+
+    //@Autowired
+    //private ReadbookMenuService readbookMenuService;
     @Autowired
     private ReadbookRoleService readbookRoleService;
     @Autowired
-    private ReadbookRoleMenuService readbookRoleMenuService;
+    private ReadbookRoleUserService readbookRoleUserService;
+    //@Autowired
+    //private ReadbookRoleMenuService readbookRoleMenuService;
     @Autowired
     private ReadbookTypeService readbookTypeService;
     @Autowired
     private ReadbookUserService readbookUserService;
     @Autowired
     private ReadbookUserEmblemService readbookUserEmblemService;
+
+
 
     @Autowired
     private ReadbookArticle readbookArticle;
@@ -68,12 +77,21 @@ public class AddData {
     private ReadbookEvaluate readbookEvaluate;
     @Autowired
     private ReadbookInfo readbookInfo;
+
     @Autowired
-    private ReadbookMenu readbookMenu;
+    private ReadbookPermission readbookPermission;
+
+    @Autowired
+    private ReadbookPermissionRole readbookPermissionRole;
+    //@Autowired
+    //private ReadbookMenu readbookMenu;
     @Autowired
     private ReadbookRole readbookRole;
+
     @Autowired
-    private ReadbookRoleMenu readbookRoleMenu;
+    private ReadbookRoleUser readbookRoleUser;
+    //@Autowired
+    //private ReadbookRoleMenu readbookRoleMenu;
     @Autowired
     private ReadbookType readbookType;
     @Autowired
@@ -91,17 +109,17 @@ public class AddData {
     public Boolean AddUser(){
         String username = randomReadbook.RandomName();
         String password = randomReadbook.RandomString();
-        Integer telphone = randomReadbook.RandomNumber();
+        String telphone = randomReadbook.RandomString();
         String email = randomReadbook.RandomEmail();
         Boolean sex = true;
         Integer age = randomReadbook.RandomHundredNumber();
-        Integer roleId = 1;
+        //Integer roleId = 1;
         String avatar = randomReadbook.RandomString();
 
         readbookUser.setUsername(username)
                 .setPassword(password).setTelphone(telphone)
                 .setEmial(email).setSex(sex).setAge(age)
-                .setRoleId(roleId).setAvatar(avatar);
+                .setAvatar(avatar);
 
         readbookUserService.save(readbookUser);
 
@@ -118,6 +136,7 @@ public class AddData {
         String intro = randomReadbook.RandomString();
         String publisher = randomReadbook.RandomString();
 
+
         readbookBook.setName(name).setAuthor(author)
                 .setIntro(intro).setPublisher(publisher);
 
@@ -130,12 +149,12 @@ public class AddData {
      * 10.生成ReadbookMenu
      * 成功
      */
-    public Boolean AddReadbookMenu(){
-        String name = randomReadbook.RandomString();
-        readbookMenu.setName(name);
-        readbookMenuService.save(readbookMenu);
-        return true;
-    }
+    //public Boolean AddReadbookMenu(){
+    //    String name = randomReadbook.RandomString();
+    //    readbookMenu.setName(name);
+    //    readbookMenuService.save(readbookMenu);
+    //    return true;
+    //}
 
     /**
      * 5.生成ReadbookComment
@@ -158,14 +177,15 @@ public class AddData {
      */
     public Boolean AddReadbookArticle(){
         String title = randomReadbook.RandomString();
-        String summary = randomReadbook.RandomString();
-        String contentText = randomReadbook.RandomString();
-        Integer page = randomReadbook.RandomNumber();
         String content = randomReadbook.RandomString();
+        String contentText = randomReadbook.RandomString();
+        //String summary = randomReadbook.RandomString();
+        Integer bookId = randomReadbook.RandomNumber();
+        Integer page = randomReadbook.RandomNumber();
         Integer view = randomReadbook.RandomNumber();
         Integer praise = randomReadbook.RandomHundredNumber();
 
-        readbookArticle.setTitle(title).setSummary(summary)
+        readbookArticle.setTitle(title).setBookId(bookId)
                 .setContentText(contentText)
                 .setPage(page).setContent(content)
                 .setView(view).setPraise(praise)
@@ -210,8 +230,8 @@ public class AddData {
      */
     public Boolean AddReadbookType(){
         String name = randomReadbook.RandomName();
-        String nickname= randomReadbook.RandomName();
-        readbookType.setName(name).setNickname(nickname);
+        //String nickname= randomReadbook.RandomName();
+        readbookType.setName(name);
         readbookTypeService.save(readbookType);
         return true;
     }
@@ -235,7 +255,7 @@ public class AddData {
     public Boolean AddReadbookCommentArticle(){
         Integer commentId = readbookComment.getId();
         Integer articleId = readbookArticle.getId();
-        readbookCommentArticle.setArticleId(articleId).setCommentId(commentId);
+        readbookCommentArticle.setArtilceId(articleId).setCommentId(commentId);
         readbookCommentArticleService.save(readbookCommentArticle);
         return true;
     }
@@ -246,6 +266,7 @@ public class AddData {
     public Boolean AddReadbookEmblem(){
         String name = randomReadbook.RandomName();
         String introduce= randomReadbook.RandomString();
+
         readbookEmblem.setName(name).setIntroduce(introduce);
         readbookEmblemService.save(readbookEmblem);
         return true;
@@ -263,14 +284,13 @@ public class AddData {
      * 12.生成ReadbookRoleMenu
      * ReadbookMenu,ReadbookRole之后
      */
-    public Boolean AddReadbookRoleMenu(){
-        Integer roleId = 1;
-        Integer menuId = readbookMenu.getId();
-        readbookRoleMenu.setMenuId(menuId).setRoleId(roleId);
-        readbookRoleMenuService.save(readbookRoleMenu);
-        return true;
-    }
-
+    //public Boolean AddReadbookRoleMenu(){
+    //    Integer roleId = 1;
+    //    Integer menuId = readbookMenu.getId();
+    //    readbookRoleMenu.setMenuId(menuId).setRoleId(roleId);
+    //    readbookRoleMenuService.save(readbookRoleMenu);
+    //    return true;
+    //}
 
 
     /**
@@ -285,11 +305,6 @@ public class AddData {
         readbookUserEmblemService.save(readbookUserEmblem);
         return true;
     }
-
-
-
-
-
 
 
     /**

@@ -27,9 +27,8 @@ public class ReadbookTypeServiceImpl extends ServiceImpl<ReadbookTypeMapper, Rea
     @Override
     public Integer selectTypeId(ReadbookType readbookType) {
         QueryWrapper<ReadbookType> queryWrapper = new QueryWrapper<>();
-        if (!StringUtils.isEmpty(readbookType.getName()) && !StringUtils.isEmpty(readbookType.getNickname())){
+        if (!StringUtils.isEmpty(readbookType.getName()) ){
             queryWrapper.eq("name",readbookType.getName());
-            queryWrapper.eq("nickname",readbookType.getNickname());
             ReadbookType readbookType1 = baseMapper.selectOne(queryWrapper);
             return readbookType1.getId();
         }

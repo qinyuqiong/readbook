@@ -28,11 +28,17 @@ public class ReadbookBookController {
     @Autowired
     private ReadbookBookService readbookBookService;
 
+    @Autowired
+    private BookUploadWithDownloadController bookUploadWithDownloadController;
+
     //添加书籍，同时指定书籍类型
+    //先上传书籍，再将返回url到表单中上传到数据库
     @PostMapping("add")
-    public StatusReturn addBook(@RequestBody QueryBook queryBook){
+    public StatusReturn addBook( @RequestBody QueryBook queryBook ){
+        //String bookFileUrl = bookUploadWithDownloadController.uploadBookFile(file);
+        //queryBook.setUrl(bookFileUrl);
         boolean save = readbookBookService.addBook(queryBook);
-        if (save == true){
+        if (save == true ){
             return StatusReturn.success();
         }
         return StatusReturn.error();

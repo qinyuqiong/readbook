@@ -36,9 +36,6 @@ public class ReadbookType implements Serializable {
     @ApiModelProperty(value = "类型名称")
     private String name;
 
-    @ApiModelProperty(value = "别名")
-    private String nickname;
-
     @ApiModelProperty(value = "创建时间")
     @TableField(fill = FieldFill.INSERT)
     private Date createTime;
@@ -46,6 +43,5 @@ public class ReadbookType implements Serializable {
     @ApiModelProperty(value = "更新时间")
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date updateTime;
-
 
 }

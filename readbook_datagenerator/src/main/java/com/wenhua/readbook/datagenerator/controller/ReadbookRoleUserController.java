@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- * 菜单表 前端控制器
+ *  前端控制器
  * </p>
  *
  * @author testjava
- * @since 2020-03-18
+ * @since 2020-09-29
  */
 @RestController
-@RequestMapping("/datagenerator/readbook-menu")
-public class ReadbookMenuController {
+@RequestMapping("/datagenerator/readbook-role-user")
+public class ReadbookRoleUserController {
 
 }
 
