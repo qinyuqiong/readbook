@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.wenhua.readbook.bookservice.entity.ReadbookBook;
 import com.wenhua.readbook.bookservice.entity.query.QueryBook;
+import com.wenhua.readbook_common.StatusReturn;
+import org.springframework.web.bind.annotation.PathVariable;
 
 /**
  * <p>
@@ -20,4 +22,6 @@ public interface ReadbookBookService extends IService<ReadbookBook> {
     boolean updateBook(QueryBook queryBook);
 
     IPage<ReadbookBook> pageListCondition( Long page, Long limit , QueryBook readbook);
+
+    StatusReturn BookByIdList( Integer bookid );
 }

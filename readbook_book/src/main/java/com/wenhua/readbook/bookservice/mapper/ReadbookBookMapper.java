@@ -2,6 +2,7 @@ package com.wenhua.readbook.bookservice.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.wenhua.readbook.bookservice.entity.ReadbookBook;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>

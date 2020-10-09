@@ -12,6 +12,8 @@ import com.wenhua.readbook.bookservice.mapper.ReadbookBookMapper;
 import com.wenhua.readbook.bookservice.service.ReadbookBookService;
 import com.wenhua.readbook.bookservice.service.ReadbookBookTypeService;
 import com.wenhua.readbook.bookservice.service.ReadbookTypeService;
+import com.wenhua.readbook_common.ResultCode;
+import com.wenhua.readbook_common.StatusReturn;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -36,6 +38,8 @@ public class ReadbookBookServiceImpl extends ServiceImpl<ReadbookBookMapper, Rea
 
     @Autowired
     private ReadbookTypeService readbookTypeService;
+
+    private ReadbookBookMapper readbookBookMapper;
 
     /**
      * 添加书籍，同时添加书籍类型关联
@@ -211,5 +215,18 @@ public class ReadbookBookServiceImpl extends ServiceImpl<ReadbookBookMapper, Rea
         }
         IPage<ReadbookBook> readbookBookIPage = baseMapper.selectPage(eduBookPage, queryWrapper);
         return readbookBookIPage;
+    }
+
+    /**
+     * 根据书籍id查询书籍相关信息
+     * @return
+     */
+    public StatusReturn BookByIdList(@PathVariable Integer bookid ){
+
+        ReadbookBook readbookBook = readbookBookMapper.selectById(bookid);
+        StatusReturn statusReturn = new StatusReturn();
+        statusReturn.setCode(ResultCode.SUCCESS);
+        statusReturn.data("通过id查询数据",readbookBook);
+        return statusReturn;
     }
 }
