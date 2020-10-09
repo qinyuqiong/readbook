@@ -36,6 +36,7 @@ public class ReadbookType implements Serializable {
     @ApiModelProperty(value = "类型名称")
     private String name;
 
+    @TableField(exist = false)
     @ApiModelProperty(value = "别名")
     private String nickname;
 

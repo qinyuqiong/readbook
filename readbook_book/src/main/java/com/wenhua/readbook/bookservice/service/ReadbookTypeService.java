@@ -14,4 +14,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ReadbookTypeService extends IService<ReadbookType> {
 
     Integer selectTypeId(ReadbookType readbookType);
+
+    ReadbookType selectBookTypeByTypeid(Integer typeid );
 }

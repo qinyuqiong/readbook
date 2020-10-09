@@ -4,8 +4,12 @@ package com.wenhua.readbook.bookservice.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.wenhua.readbook.bookservice.entity.ReadbookBook;
+import com.wenhua.readbook.bookservice.entity.ReadbookBookType;
+import com.wenhua.readbook.bookservice.entity.ReadbookType;
 import com.wenhua.readbook.bookservice.entity.query.QueryBook;
 import com.wenhua.readbook.bookservice.service.ReadbookBookService;
+import com.wenhua.readbook.bookservice.service.ReadbookBookTypeService;
+import com.wenhua.readbook.bookservice.service.ReadbookTypeService;
 import com.wenhua.readbook_common.StatusReturn;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +31,12 @@ public class ReadbookBookController {
 
     @Autowired
     private ReadbookBookService readbookBookService;
+
+    @Autowired
+    private ReadbookTypeService readbookTypeService;
+
+    @Autowired
+    private ReadbookBookTypeService readbookBookTypeService;
 
     //添加书籍，同时指定书籍类型
     @PostMapping("add")
@@ -93,8 +103,14 @@ public class ReadbookBookController {
      */
     @GetMapping("{bookid}")
     public StatusReturn BookByIdList(@PathVariable Integer bookid ){
-        ReadbookBook book = readbookBookService.getById(bookid);
-        return StatusReturn.success().data("book",book);
+
+        ReadbookBook book = readbookBookService.selectBookById(bookid);
+
+        int typeid = readbookBookTypeService.selectTypeidByBookid(bookid);
+
+        ReadbookType readbookType = readbookTypeService.selectBookTypeByTypeid(typeid);
+
+        return StatusReturn.success().data("书籍和书籍类型详细信息",new QueryBook(book,readbookType));
     }
 
 }

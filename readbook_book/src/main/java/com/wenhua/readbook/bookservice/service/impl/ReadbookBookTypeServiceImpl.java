@@ -4,11 +4,14 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.wenhua.readbook.bookservice.entity.ReadbookBook;
 import com.wenhua.readbook.bookservice.entity.ReadbookBookType;
+import com.wenhua.readbook.bookservice.entity.ReadbookType;
 import com.wenhua.readbook.bookservice.mapper.ReadbookBookTypeMapper;
 import com.wenhua.readbook.bookservice.service.ReadbookBookTypeService;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.PathVariable;
 
 /**
  * <p>
@@ -52,4 +55,15 @@ public class ReadbookBookTypeServiceImpl extends ServiceImpl<ReadbookBookTypeMap
         IPage<ReadbookBookType> readbookBookTypeIPage = baseMapper.selectPage(eduBookPage, queryWrapper);
         return readbookBookTypeIPage;
     }
+
+    //根据bookid查询typeid
+    @Override
+    public int selectTypeidByBookid(Integer bookid) {
+        QueryWrapper<ReadbookBookType> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("book_id",bookid);
+        ReadbookBookType readbookBookType = baseMapper.selectOne(queryWrapper);
+        return readbookBookType.getTypeId();
+    }
+
+
 }

@@ -23,5 +23,5 @@ public interface ReadbookBookService extends IService<ReadbookBook> {
 
     IPage<ReadbookBook> pageListCondition( Long page, Long limit , QueryBook readbook);
 
-    StatusReturn BookByIdList( Integer bookid );
+    ReadbookBook selectBookById( Integer bookid );
 }
