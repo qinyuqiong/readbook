@@ -45,5 +45,19 @@ public class QueryBook {
     @ApiModelProperty(value = "别名")
     private String TypeNickname;
 
+    public QueryBook() {
+    }
 
+    public QueryBook(ReadbookBook book,ReadbookType readbookType){
+        this.bookId = book.getId();
+        this.name = book.getName();
+        this.author = book.getAuthor();
+        this.intro = book.getIntro();
+        this.publisher = book.getPublisher();
+        this.typeId = readbookType.getId();
+        this.firstCreateTime = book.getCreateTime();
+        this.lastCreateTime = book.getUpdateTime();
+        TypeName = readbookType.getName();
+        TypeNickname = readbookType.getNickname();
+    }
 }
